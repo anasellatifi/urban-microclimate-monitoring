@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Microclimate Analysis</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Average Temperature</th>
+        <th>Average Humidity</th>
+        <th>Average AQI</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}
+        <tr>
+          <td>{{ result.type }}</td>
+          <td>{{ result.avg_temperature }}</td>
+          <td>{{ result.avg_humidity }}</td>
+          <td>{{ result.avg_aqi }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
